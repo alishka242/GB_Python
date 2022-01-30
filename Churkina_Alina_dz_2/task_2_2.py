@@ -1,5 +1,3 @@
-import re
-
 def chenge_numb_str(numb_str: str) -> str:
     if len(numb_str) < 2:
         numb_str = f'0{numb_str}' 
@@ -14,6 +12,7 @@ def chenge_numb_str(numb_str: str) -> str:
 def convert_list_in_str(list_in: list) -> str:
     i = 0
     str_out = ''
+
     for el in list_in:
         if el.isnumeric() or el[1::].isnumeric():
             el = f'"{chenge_numb_str(el)}"'
@@ -23,9 +22,11 @@ def convert_list_in_str(list_in: list) -> str:
         list_in.remove(list_in[i])
 
     str_out = ' '.join(list_in)
+
     return str_out
 
 
 my_list = ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+5', 'градусов']
 result = convert_list_in_str(my_list)
+
 print(result)
