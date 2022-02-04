@@ -1,12 +1,16 @@
+from task_3_1 import num_translate
+
 def num_translate_adv(value: str) -> str:
-    """переводит числительное с английского на русский. Захотела применить новые функции в решении задачки:)"""
+    """переводит числительное с английского на русский. И первую букву делает заглавной"""
 
-    eng_numb = ("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten")
-    rus_numb = ("один", "два", "три", "четыре", "пять", "шесть", "семь ","восемь", "девять", "десять")
-    dict_numb = dict(zip(eng_numb, rus_numb))
+    return num_translate(value.lower()).capitalize()
 
-    return dict_numb.get(value.lower(), "ошибка в написании или число больше 10").capitalize()
+print("\nпереводит числительное с английского на русский")
+"""Вызов ф-ии первого задания"""
+print(f'\nt_3_1: {num_translate("one")}')
+print(f't_3_1: {num_translate("eight")}')
 
-print(num_translate_adv("one"))
-print(num_translate_adv("Eight"))
-print(num_translate_adv("eig"))
+"""Вызов ф-ии второго задания"""
+print(f'\nt_3_2: {num_translate_adv("one")}')
+print(f't_3_2: {num_translate_adv("Eight")}')
+print(f't_3_2: {num_translate_adv("eig")}')

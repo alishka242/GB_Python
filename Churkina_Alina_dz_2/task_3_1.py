@@ -7,5 +7,6 @@ def num_translate(value: str) -> str:
 
     return dict_numb.get(value, "Ошибка в написании или число больше 10")
 
-print(num_translate("one"))
-print(num_translate("eight"))
+# Перенесла вызов ф-ии в файл task_3_2.py, чтобы результат task_3_2.py был ожидаемым!
+# print(num_translate("one"))
+# print(num_translate("eight"))
