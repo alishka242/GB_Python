@@ -1,0 +1,53 @@
+--Проверить, установлен ли пакет pillow в глобальном окружении. Если да — зафиксировать версию.
+home-rim@homerim-desktop:~/Desktop/experiment$ pip list 
+Pillow                 7.0.0   
+OR 
+home-rim@homerim-desktop:~/Desktop/experiment$ pip freeze
+Pillow==7.0.0
+OR 
+home-rim@homerim-desktop:~$ pip show pillow
+Name: Pillow
+Version: 7.0.0
+Summary: Python Imaging Library (Fork)
+Home-page: https://python-pillow.org
+Author: Alex Clark (PIL Fork Author)
+Author-email: aclark@python-pillow.org
+License: HPND
+Location: /usr/lib/python3/dist-packages
+Requires: 
+Required-by: 
+
+--Установить самую свежую версию pillow, если ранее она не была установлена.
+home-rim@homerim-desktop:~/Desktop/experiment$ pip install pillow
+Requirement already satisfied: pillow in /usr/lib/python3/dist-packages (7.0.0)
+
+--Создать и активировать виртуальное окружение. Убедиться, что в нем нет пакета pillow.
+home-rim@homerim-desktop:~/Desktop/experiment$ sudo apt install python3-venv
+home-rim@homerim-desktop:~/Desktop/experiment$ python3 -m venv hw_4_VE
+home-rim@homerim-desktop:~/Desktop/experiment$ source hw_4_VE/bin/activate
+(hw_4_VE) home-rim@homerim-desktop:~/Desktop/experiment$ pip list
+Package       Version
+------------- -------
+pip           20.0.2 
+pkg-resources 0.0.0  
+setuptools    44.0.0 
+
+
+--Установить в виртуальное окружение pillow версии 7.1.1 (или другой, отличной от самой свежей).
+(hw_4_VE) home-rim@homerim-desktop:~/Desktop/experiment$ pip install Pillow==7.1.1
+Collecting Pillow==7.1.1
+  Downloading Pillow-7.1.1-cp38-cp38-manylinux1_x86_64.whl (2.1 MB)
+     |████████████████████████████████| 2.1 MB 1.0 MB/s 
+Installing collected packages: Pillow
+  Attempting uninstall: Pillow
+    Found existing installation: Pillow 9.0.1
+    Uninstalling Pillow-9.0.1:
+      Successfully uninstalled Pillow-9.0.1
+Successfully installed Pillow-7.1.1
+
+
+--Деактивировать виртуальное окружение.
+(hw_4_VE) home-rim@homerim-desktop:~/Desktop/experiment$ deactivate
+
+
+--Если будут проблемы с pillow - можно поработать с другим пакетом: например, requests.
