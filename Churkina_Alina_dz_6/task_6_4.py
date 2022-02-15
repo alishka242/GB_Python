@@ -13,7 +13,7 @@ def prepare_dataset(path_users_file: str, path_hobby_file: str) -> dict:
     us_hob = [x.strip() for x in open(path_hobby_file, 'r', encoding='utf-8').readlines()]
 
     if len(us_name) < len(us_hob):
-        return 1
+        return "None"
     elif len(us_name) > len(us_hob):
         us_hob.append(None)
     for key, val in zip(us_name, us_hob):
