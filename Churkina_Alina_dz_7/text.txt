@@ -1,0 +1,6 @@
+('/home/home-rim/Documents/GB_Python/Churkina_Alina_dz_7/my_project_hw_7_3', ['adminapp', 'mainapp', 'authapp', 'settings'], ['readme.txt'])
+('/home/home-rim/Documents/GB_Python/Churkina_Alina_dz_7/my_project_hw_7_3/adminapp', ['passwords'], ['my_pass.txt'])
+('/home/home-rim/Documents/GB_Python/Churkina_Alina_dz_7/my_project_hw_7_3/adminapp/passwords', [], ['sellers_pass.txt'])
+('/home/home-rim/Documents/GB_Python/Churkina_Alina_dz_7/my_project_hw_7_3/mainapp', [], [])
+('/home/home-rim/Documents/GB_Python/Churkina_Alina_dz_7/my_project_hw_7_3/authapp', [], [])
+('/home/home-rim/Documents/GB_Python/Churkina_Alina_dz_7/my_project_hw_7_3/settings', [], [])
