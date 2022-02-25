@@ -20,8 +20,9 @@ def create_dir(dir_name):
 
 def create_conf_dir(BASE_DIR, tree_dirs, conf_name, conf_name_plug):
     """Создаем конф дир"""
-    new_d = os.path.join(BASE_DIR, conf_name)  
     """Проверяем не создаваля ли до нас конфиг dir."""
+    new_d = conf_name
+ 
     if check_exists(conf_name):
         os.mkdir(new_d + '_copy')
         new_d = new_d + '_copy'
@@ -30,13 +31,15 @@ def create_conf_dir(BASE_DIR, tree_dirs, conf_name, conf_name_plug):
 
     for dir_name, list_files in tree_dirs.items():
         """Если k == "-", то нужно создать файл если он еще не сущ. Иначе проверить сущ ли дир, создать все необх"""
+        next_d = ''
+        
+        # if dir_name == conf_name_plug and list_files == ['']: 
+        #     pass
         if dir_name != conf_name_plug:
-            new_d = os.path.join(new_d, dir_name)
-            create_dir(new_d)
-        elif dir_name == conf_name_plug: 
-            new_d = os.path.join(BASE_DIR, conf_name)
-        elif list_files != ['']:
-            create_file(list_files, new_d)
+            next_d = os.path.join(new_d, dir_name)
+            create_dir(next_d)
+        if list_files != ['']:
+            create_file(list_files, next_d)
 
     ##print(tree_dirs)
     """Перебираем ключи, проверяем, что директорий из словаря не сущ, создаем дир и файлы."""
@@ -64,7 +67,6 @@ def get_tree_dirs(conf, conf_name, conf_name_plug):
         """Заполняем словарь. Как ключь используем путь до дир, как значения - список имен файлов. 
         Если файлов нет, то в списке будет пустая строка."""
         dict_dirs[dir_way] = files
-    print(dict_dirs)
 
     return dict_dirs
 
@@ -74,4 +76,4 @@ conf_name = os.path.join(BASE_DIR, conf)
 conf_name_plug= "-"
 tree_dirs = get_tree_dirs(conf, conf_name, conf_name_plug)
 ##print(create_dir(BASE_DIR, tree_dirs, new_dold))
-#create_conf_dir(BASE_DIR, tree_dirs, conf_name, conf_name_plug)
+create_conf_dir(BASE_DIR, tree_dirs, conf_name, conf_name_plug)
