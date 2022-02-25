@@ -4,19 +4,19 @@ def check_exists(some_d_f):
     if os.path.exists(some_d_f):
         return 1
     return 0
-
-def create_file(list_files, new_d):
-    for f in list_files:
-        way_to_file = os.path.join(new_d, f)
-        if not check_exists(way_to_file):
-            n_file = open(os.path.join(new_d, f))
-            print(f'Created new file: {f}')
-            n_file.close()
             
 def create_dir(dir_name):
     if not check_exists(dir_name):
         os.makedirs(dir_name)
         print(f'Created new dir {dir_name}')
+
+def create_file(list_files, new_d):
+    for f in list_files:
+        way_to_file = os.path.join(new_d, f)
+        if not check_exists(way_to_file):
+            n_file = open(way_to_file, 'w+')
+            print(f'Created new file: {f}')
+            n_file.close()
 
 def create_conf_dir(BASE_DIR, tree_dirs, conf_name, conf_name_plug):
     """Создаем конф дир"""
