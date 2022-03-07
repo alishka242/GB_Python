@@ -18,7 +18,6 @@ def get_parse_attrs(line: str) -> tuple:
     
     return f"{ip_add_list} {time_is_list} {API_req_list} {uri_list} {resp_str_list[1]} {resp_str_list[2]}"
 
-
 list_out = list()
 
 with open('nginx_logs.txt', 'r', encoding='utf-8') as fr:
