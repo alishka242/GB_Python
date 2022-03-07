@@ -1,6 +1,5 @@
 import re
 
-
 def email_parse(email: str) -> dict:
     """
     Парсит переданную email-строку на атрибуты и возвращает словарь
