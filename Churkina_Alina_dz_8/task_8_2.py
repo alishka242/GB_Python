@@ -7,16 +7,16 @@ def get_parse_attrs(line: str) -> tuple:
     time_is = re.compile(r'\d*\/\w*\/(?:\d*\:){3}\d+\s\+\d*') #'17/May/2015:08:05:49 +0000'
     API_req = re.compile(r'GET|POST') #'GET'
     uri = re.compile(r'\/\w*\/[a-z]*\_\d') #'/downloads/product_2'
-    resp_str = re.compile(r' \d* \d*') #'304', '0'
+    resp = re.compile(r' \d* \d*') #'304', '0'
 
     ip_add_list = ip_add.search(line)[0] if ip_add.search(line) else 'Not found'
     time_is_list = time_is.search(line)[0] if time_is.search(line) else 'Not found'
     API_req_list = API_req.search(line)[0] if API_req.search(line) else 'Not found'
     uri_list = uri.search(line)[0] if uri.search(line) else 'Not found'
-    resp_str_list = resp_str.findall(line)[0] if resp_str.search(line) else 'Not found'
-    resp_str_list_1 = resp_str_list.split(' ')
+    resp_str = resp.findall(line)[0] if resp.search(line) else 'Not found'
+    resp_str_list= resp_str.split(' ')
     
-    return f"{ip_add_list} {time_is_list} {API_req_list} {uri_list} {resp_str_list_1[1]} {resp_str_list_1[2]}"
+    return f"{ip_add_list} {time_is_list} {API_req_list} {uri_list} {resp_str_list[1]} {resp_str_list[2]}"
 
 
 list_out = list()
