@@ -1,9 +1,10 @@
 def type_logger(func):
 
     def wraper(*arg):
-        # arg_list = list(arg)
         str_resp = ''
+        # создаю list comprehensions
         cube_info = [f'{func(numb)}: {type(func(numb))}' for numb in arg]
+        # переворачиваю список, потому что 
         cube_info.reverse()
 
         while len(cube_info) > 1: 

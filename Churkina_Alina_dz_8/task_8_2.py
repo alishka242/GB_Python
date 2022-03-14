@@ -3,6 +3,7 @@ from pprint import pprint
 
 def get_parse_attrs(line: str) -> tuple:
     """Парсит строку на атрибуты и возвращает кортеж атрибутов (<remote_addr>, <request_type>, <requested_resource>)"""
+    """В будущем луше сделать словарь и перебирать его чтобы не повторяться, но сейчас оставлю так."""
     ip_add = re.compile(r'(?:\d*\.){3}\d*') #'188.138.60.101'
     time_is = re.compile(r'\d*\/\w*\/(?:\d*\:){3}\d+\s\+\d*') #'17/May/2015:08:05:49 +0000'
     API_req = re.compile(r'GET|POST') #'GET'
