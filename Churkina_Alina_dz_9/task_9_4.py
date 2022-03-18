@@ -37,25 +37,11 @@ class Car:
             '<название марки машины>: движется <direction>'
         """
         ways = ['направо', 'налево', 'прямо', 'назад']
-        # flag = 1
-        # for val in ways:
-        #     if direction == val: 
-        #         flag = 1
-        #         print(f'{self.name}: движется {direction}')
-        #     else: 
-        #         flag = 0
-        
-        try:
-            ways.index(direction)
+
+        if direction in ways:
             print(f'{self.name}: движется {direction}')
-            # for val in ways:
-            #     if direction == val:
-            #         print(f'{self.name}: движется {direction}')
-            #         break
-            #     break
-            # i = int('re')
-        except ValueError: 
-            print(direction + ' нераспознанное направление движения')
+        else:
+            raise ValueError (f'"{direction}" нераспознанное направление движения')
 
     def show_speed(self) -> None:
         """
@@ -69,7 +55,7 @@ class Car:
             print(mess_speed)
         else:
             print(mess_speed + '\n' +  'Вруби мигалку и забудь про скорость!')
-
+            
 class TownCar(Car):
     is_police: bool = False
 
