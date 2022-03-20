@@ -17,7 +17,7 @@ def get_parse_attrs(line: str) -> tuple:
     resp_str = resp.findall(line)[0] if resp.search(line) else 'Not found'
     resp_str_list= resp_str.split(' ')
     
-    return f"{ip_add_list} {time_is_list} {API_req_list} {uri_list} {resp_str_list[1]} {resp_str_list[2]}"
+    return (ip_add_list, time_is_list, API_req_list, uri_list, resp_str_list[1], resp_str_list[2])
 
 list_out = list()
 
