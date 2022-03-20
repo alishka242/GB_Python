@@ -37,7 +37,6 @@ if __name__ == '__main__':
     | 7 7 |
     """
     fail_matrix = Matrix([[1, 2], [3, 4, 7], [5, 6]])
-    print(fail_matrix)
     """
     Traceback (most recent call last):
       ...
