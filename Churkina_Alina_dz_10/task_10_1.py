@@ -4,7 +4,7 @@ from typing import List
 class Matrix:
     def __init__(self, matrix: List[List[int]]):
         for list_numb in matrix:
-            if (len(matrix) == 3 and len(list_numb) == 2) or (len(matrix) == 2 and len(list_numb) == 4) or (len(matrix) == 3 and len(list_numb) == 3):
+            if (len(matrix) == 3 and len(list_numb) == 2 and len(list_numb) == len(matrix[0])) or (len(matrix) == 2 and len(list_numb) == 4 and len(list_numb) == len(matrix[0])) or (len(matrix) == 3 and len(list_numb) == 3 and len(list_numb) == len(matrix[0])):
                 self.matrix = matrix   
             else:
                 raise ValueError ('fail initialization matrix')
