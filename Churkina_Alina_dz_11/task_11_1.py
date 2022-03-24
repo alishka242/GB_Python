@@ -1,6 +1,3 @@
-from pickle import FALSE, TRUE
-
-
 class Date:
     def __init__(self, date: str):
         self.date = date
@@ -58,9 +55,6 @@ class Date:
             return "Дата принята!\n"
         else:
             return err_mess
-
-
-
 
 if __name__ == '__main__':
     date = Date('22.02.1987')
