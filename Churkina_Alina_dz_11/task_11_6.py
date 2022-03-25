@@ -1,3 +1,5 @@
+from checker_error import CheckVal, MyErrIsInt
+
 class WarehouseOfficeEquipment:
     products = {}
     def __init__(self, name: str, value: int, place: str) -> None:
@@ -54,7 +56,14 @@ new_product = p1.brand + '_' + str(p1.year)
 
 a = WarehouseOfficeEquipment(new_product, 2, 'A98')
 WarehouseOfficeEquipment.get_info(new_product)
+
+if __name__ == '__main__':
+    new_v = input(f'Введите текущее кол-во продукта {new_product}: ')
+    try:
+        new_v = CheckVal.is_int(new_v) 
+        WarehouseOfficeEquipment.change_value_product(new_product, new_v)
+    except MyErrIsInt as er:
+        print(er)
+
+print(f'Юрий Смолов поменял позицию {new_product}')
 WarehouseOfficeEquipment.transfer_to_department(new_product, 'AT56')
-WarehouseOfficeEquipment.change_value_product(new_product, 7)
-# b = WarehouseOfficeEquipment()
-# c = WarehouseOfficeEquipment()
